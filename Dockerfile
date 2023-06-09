@@ -16,10 +16,10 @@ RUN apt-get update \
     && apt-get install -y git lolcat figlet toilet \
     && rm -rf /var/lib/apt/lists/*
 
-RUN adduser --disabled-password --home / container
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
-USER container
-ENV USER container
+USER docker
+ENV USER docker
 ENV HOME /
 WORKDIR /
 
