@@ -16,7 +16,7 @@ RUN apt-get update \
     && apt-get install -y git lolcat figlet toilet \
     && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -m docker && echo "docker:docker" | 'docker' && adduser docker sudo
+RUN useradd -m docker && echo "docker:docker" | "docker" && adduser docker sudo
 
 USER docker
 ENV USER docker
