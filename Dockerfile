@@ -13,8 +13,7 @@ RUN apt-get update \
     && add-apt-repository -y ppa:longsleep/golang-backports \
     && apt-get update \
     && apt-get install -y golang \
-    && apt-get install -y git lolcat figlet toilet \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y git lolcat figlet toilet 
 
 
 RUN adduser --disabled-password --gecos '' docker && adduser docker sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
