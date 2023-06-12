@@ -16,8 +16,6 @@ RUN apt-get update \
     && apt-get install -y git lolcat figlet toilet \
     && rm -rf /var/lib/apt/lists/*
 
-RUN adduser --disabled-password --gecos '' docker
-RUN adduser docker sudo
 RUN adduser --disabled-password --gecos '' docker && adduser docker sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
